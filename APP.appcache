@@ -1,0 +1,37 @@
+{
+  "name": "The Example App",
+  "description": "Exciting Open Web development action!",
+  "launch_path": "/",
+  "version": "1.0",
+  "icons": {
+    "16": "assets/icons/icon_16.png",
+    "48": "assets/icons/icon_48.png",
+    "128": "assets/icons/icon_128.png"
+  },
+  "developer": {
+    "name": "Gomosoft",
+    "url": "http://gomosoft.com"
+  },
+  "appcache_path": "/cache.manifest",
+  "locales": {
+    "es": {
+      "description": "HoO2chat una forma divertida de compartir tus momentos",
+      "developer": {
+        "url": "https://gomosoft.com"
+      }
+    }
+  },
+  "default_locale": "es",
+  "required_features": ["touch", "geolocation", "webgl"],
+  "permissions": {
+    "contacts": {
+      "description": "Required for auto-completion in the share screen",
+      "access": "read"
+    },
+    "geolocation" : {
+       "description": "For share your location with other people",
+       "access": "read"
+    }
+  },
+  "fullscreen": "false"
+}

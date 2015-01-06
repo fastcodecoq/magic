@@ -1,0 +1,320 @@
+<!doctype html>
+
+<html lang="es-CO" 
+      xmlns:og="http://ogp.me/ns#" manifest="APP.appcache">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="author" content="Javier Gómez (@gomosoft)">    
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="360">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta property="og:title" content="Magic Chat - Streaming"/>    
+    <meta property="og:url" content="http://gomosoft.com/magic/"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://cdn.gomosoft.pro/img/logos/logo_200.png"/>
+    <meta property="og:site_name" content="Magic Chat"/>    
+    <meta property="og:description"
+          content="Real Madrid FC Vs FC Barcelona, Copa del rey en VIVO."/> 
+
+	<title>Hoo2Chat</title>
+
+	<link rel="stylesheet/less" href="assets/js/pretty/prettify.css" />	
+	<link rel="stylesheet/less" href="less/default.less" />
+	<link rel="stylesheet/less" href="bootstrap/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet/less" href="icons/iconmoon/style.css" />
+
+	<link rel="author" href="humans.txt" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="image_src" href="apple-touch-icon-144x144-precomposed.png">
+	<script src="js/less.min.js"></script>
+	
+</head>
+<body>
+
+	 <div id="pop">
+	 	<img src="http://imageshack.us/a/img850/3307/ncki.png" alt=""  />
+	 </div>
+
+
+	<div id="login">
+		<section class='msg'>
+		<h2>Ingresar con Facebook</h2>
+		<span>Debes loguearte con Facebook</span>
+		<span> para ingresar al chat.</span>
+		<button id="fb" class='btn btn-primary'>Conectar</button>
+		</section>
+	</div>
+
+<article id="helpTxt" >			
+		<span style="display:block">Hoo2chat is an app based on Magichat core, developed by @gomosoft, @angelmtz and @dannegm. Hoo2chat is an original idea from gomosoft.</span>	
+
+	    <br />
+	    <br />
+
+		<h4>License</strong></h4> <br>
+	
+					
+					
+			<p style="text-align: justify;
+padding: 2px; font-size:11px"> This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <a href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>. </p>
+		</span>
+		<br>
+		<br>
+		<span style="display:block">  </span> 
+		<br>	
+					<br>	
+</article>
+<div id="main">
+	<header id="hed"> 
+		<div  style="border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+overflow: hidden;">
+		<h1>
+			&nbsp;&nbsp;<span style="margin-top: 2px;
+font-weight: bold;
+letter-spacing: 1px;">&nbsp;&nbsp;HoO2Chat</span>
+		</h1>
+		<nav>							
+			<button id="usersOn" class="hidden-desktop" style="font-size: 1.4em;"><i class="icon-menu2"></i></button>
+			<button id="help" class="visible-desktop">About</button>
+		</nav>
+		</div>
+		<navbar id="mobile-bar" class="hidden-desktop  row">
+			<div id="menu-mobile" class="row">
+				
+				<nav class="active" data-cmd="switch-tap" data-target="chat" data-action><i class="icon-comments"></i></nav>		   
+				<nav data-cmd="switch-tap" data-target="inbox" data-action><i class="icon-inbox"></i></nav>		   
+				<nav data-cmd="switch-tap" data-target="media" data-action><i class="icon-image" style="margin-top: -1px; display: block;"></i></nav>		
+				<span id="cursor-active"></span>   
+
+			</div>
+
+			<div class="row">
+				<span style="width:100%; display:block; cursor:default" data-cmd=".toggle" data-target="#mob-on-list" data-action>Users Online (<span class="usersOn">You</span>)</span>
+				<ul class="uonline " id="mob-on-list">
+				</ul>
+			</div>
+
+		</navbar>
+	</header>
+	<div id="contenedor">
+		<aside id="menuUsers">
+			<div id="me">
+				<div id="uonline">Online (<span class="usersOn">0</span>)</div>  
+			</div>
+			<ul id="online" class="uonline ">
+
+
+			</ul>
+		</aside>
+		<div id="rom">
+
+	<div style="width:100%; height:34%; background:black; overflow:hidden; position: relative; display:none">
+
+		<div id="frameOver" style="position:absolute; width:100%; height:100%; z-index:100; background-color: rgba(0, 0, 0, 0.84);
+background-image: url(img/play_overlay.png);
+background-position: center;" onclick="remove(this)">
+		</div>
+	
+		<iframe width="100%" height="100%" id="transmision" src="" scrolling="no" frameborder="0"    style="border: 0px none transparent;"></iframe>
+
+                <br>
+
+     </div>
+			
+			<div id="history">
+				<section id="logs">
+				</section>			
+				<section id="inbox"></section>
+			</div>
+
+			<form id="formulario">
+				<div class="controls">
+					<span id="action"></span>
+					<span id="conrols">
+
+						<label>
+						   <img src="img/loader.gif" width="16" alt="" id="picLoader" style="display:none"/> &nbsp;
+ 						   <a href="#" data-target="#sharePic" class="a-opt"  data-click><i class="icon-camera4" style="font-size:1.2em"></i> <span class="visible-desktop" class="t-normal">Send Image</span></a>
+							
+						   <input type="file" name="foto" id="sharePic" style="display:none;"/>
+							
+
+							&nbsp;
+							&nbsp;
+
+						</label>
+
+
+
+						<label>
+							<a href="#"  class="a-opt"  id="dropbox"><i class="icon-dropbox" style="font-size:1.2em"></i> <span class="visible-desktop" class="t-normal"> Dropbox File</span></a>
+								&nbsp;
+							&nbsp;
+						</label>
+
+						<label>						   
+ 						   <a href="#" data-target="#sharePic" class="a-opt"  data-click><i class="icon-microphone" style="font-size:1.2em"></i> <span class="visible-desktop" class="t-normal">Send Voice</span></a>
+							
+						   <input type="file" name="foto" id="sharePic" style="display:none;"/>
+							
+
+							&nbsp;
+							&nbsp;
+
+						</label>
+
+						<label>
+
+							<select id="lang">
+							
+								<option value="nop">Read in</option>		
+								<option value="zh-CN">Chinese</option>											
+								<option value="nl">Dutch</option>												
+							    <option value="en">English</option>												
+								<option value="fr">French</option>								
+								<option value="it">Italian</option>								
+								<option value="pt">Portuguese</option>								
+								<option value="es">Spanish</option>								
+
+							</select>																	
+
+							&nbsp;
+							&nbsp;
+
+						</label>
+
+						
+		
+						<label>
+							<a href="#" rel="norel"  class="a-opt" data-target="#sound" data-cmd="toggle" data-action><i class="icon-volume-medium" style="font-size:1.1em" id="sound"></i> 	<span class="visible-desktop">Sound</span></a>
+							<input id="cSonido" type="checkbox" style="display:none;" checked>
+						
+ 						</label>			
+					</span>
+				</div>
+				<div class="textarea" >
+					<textarea id="mensaje" class="ita" placeholder="Escribe un mensaje..."></textarea>
+				</div>
+			</form>
+		</div>
+			<section id="media">
+				    <div id="conte"></div>
+			</section>
+	</div>
+</div>
+
+
+
+<input type="dropbox-chooser" name="selected-file" id="db-chooser" style="display:none"/>
+
+
+<div id="overr" class="overlay">	
+   <div class="content"></div>
+</div>
+
+ 
+    <script src="http://gomosoft.com:7873/socket.io/socket.io.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/dannegm.dialogs.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/fb.script.js"></script> 
+    <script src="js/quo.js"></script>	
+	<script src="js/zcript.js"></script>
+
+
+	<script>
+
+	    less.watch();
+
+	    if (!(window.console && console.log)) {
+(function() {
+var noop = function() {},
+console = window.console = {};
+methods = 'assert clear count debug dir dirxml error exception group groupCollapsed groupEnd info log markTimeline profile profileEnd markTimeline table time timeEnd timeStamp trace warn',
+methods = methods.split(' ');
+for(x in methods){
+console[methods[x]] = noop;
+}
+}());
+}
+
+	    $(window).load(function(){
+
+	    	 var face = $("#fb").fb(function(rsp){  	   	  	  
+  	   	 	     
+  	   	  			if(this.isOn()){
+
+  	   	  				var vars = {
+
+                  message : "Hoo2Chat, una herramienta que traduce tus conversaciones en tiempo real. Chatea con personas de diferentes países sin preocuparte por el idioma.",
+                  link: "http://gomosoft.com/magic",
+                  picture: "http://gomosoft.com/img/logo.png",
+                  name: "HoO2Chat",
+                  description: "Hoo2Chat, una herramienta que traduce tus conversaciones en tiempo real. Chatea con personas de diferentes países sin preocuparte por el idioma."
+
+                         }
+
+  	   	              	// publicaGraph(vars,function(){ });
+  	   	            
+
+	    	         fbInfo(function(rs){
+
+	    	         	   arrancar(rs);
+
+	    	         	   console.log(rs);	    	      
+
+	    	         });
+  
+
+  	   	  			 }else{
+
+  	   	  			 	 $("#login").fadeIn( function(){
+
+  	   	  			 	 	stream();
+
+  	   	  			 	 });
+
+  	   	  			 } 
+
+
+
+  	   	  });   
+
+  	   	  console.log(face);
+
+
+        	     	 	
+  	   });
+
+
+	   
+
+
+	</script>
+
+<script src="assets/js/pretty/prettify.js"></script>
+<script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropins.js" id="dropboxjs" data-app-key="j3sqd0zjeqokfvk"></script>
+</body>
+</html>
