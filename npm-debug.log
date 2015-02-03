@@ -1,0 +1,237 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'socket.io@0.8' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'socket.io@0.8', null ]
+6 verbose cache add name=undefined spec="socket.io@0.8" args=["socket.io@0.8",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'socket.io@0.8',
+7 verbose parsed url   path: 'socket.io@0.8',
+7 verbose parsed url   href: 'socket.io@0.8' }
+8 verbose cache add name="socket.io" spec="0.8" args=["socket.io","0.8"]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '0.8',
+9 verbose parsed url   path: '0.8',
+9 verbose parsed url   href: '0.8' }
+10 verbose addNamed [ 'socket.io', '0.8' ]
+11 verbose addNamed [ null, '>=0.8.0-0 <0.9.0-0' ]
+12 silly lockFile aec93506-socket-io-0-8 socket.io@0.8
+13 verbose lock socket.io@0.8 /home/gomosoft/.npm/aec93506-socket-io-0-8.lock
+14 silly addNameRange { name: 'socket.io',
+14 silly addNameRange   range: '>=0.8.0-0 <0.9.0-0',
+14 silly addNameRange   hasData: false }
+15 verbose request where is /socket.io
+16 verbose request registry https://registry.npmjs.org/
+17 verbose request id d6e7b673669aefa7
+18 verbose url raw /socket.io
+19 verbose url resolving [ 'https://registry.npmjs.org/', './socket.io' ]
+20 verbose url resolved https://registry.npmjs.org/socket.io
+21 verbose request where is https://registry.npmjs.org/socket.io
+22 info trying registry request attempt 1 at 14:59:40
+23 verbose etag "69UVN9B23AAH583I58NMLT3AT"
+24 http GET https://registry.npmjs.org/socket.io
+25 http 304 https://registry.npmjs.org/socket.io
+26 silly registry.get cb [ 304,
+26 silly registry.get   { date: 'Tue, 20 Jan 2015 14:59:30 GMT',
+26 silly registry.get     server: 'Apache',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     'last-modified': 'Tue, 20 Jan 2015 14:59:30 GMT',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     etag: '"69UVN9B23AAH583I58NMLT3AT"',
+26 silly registry.get     age: '47',
+26 silly registry.get     'x-served-by': 'cache-iad2146-IAD',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '1',
+26 silly registry.get     'x-timer': 'S1421765970.017416,VS0,VE0',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'content-length': '0',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 verbose etag https://registry.npmjs.org/socket.io from cache
+28 silly addNameRange number 2 { name: 'socket.io', range: '>=0.8.0-0 <0.9.0-0', hasData: true }
+29 silly addNameRange versions [ 'socket.io',
+29 silly addNameRange   [ '0.3.8',
+29 silly addNameRange     '0.4.0',
+29 silly addNameRange     '0.4.1',
+29 silly addNameRange     '0.5.1',
+29 silly addNameRange     '0.5.3',
+29 silly addNameRange     '0.6.0',
+29 silly addNameRange     '0.6.1',
+29 silly addNameRange     '0.6.3',
+29 silly addNameRange     '0.6.4',
+29 silly addNameRange     '0.6.5',
+29 silly addNameRange     '0.6.6',
+29 silly addNameRange     '0.6.7',
+29 silly addNameRange     '0.6.8',
+29 silly addNameRange     '0.6.9',
+29 silly addNameRange     '0.6.10',
+29 silly addNameRange     '0.6.11',
+29 silly addNameRange     '0.6.12',
+29 silly addNameRange     '0.6.14',
+29 silly addNameRange     '0.6.15',
+29 silly addNameRange     '0.6.16',
+29 silly addNameRange     '0.6.17',
+29 silly addNameRange     '0.6.18',
+29 silly addNameRange     '0.7.0',
+29 silly addNameRange     '0.7.1',
+29 silly addNameRange     '0.7.2',
+29 silly addNameRange     '0.7.3',
+29 silly addNameRange     '0.7.4',
+29 silly addNameRange     '0.7.5',
+29 silly addNameRange     '0.7.6',
+29 silly addNameRange     '0.7.7',
+29 silly addNameRange     '0.7.8',
+29 silly addNameRange     '0.7.9',
+29 silly addNameRange     '0.7.10',
+29 silly addNameRange     '0.7.11',
+29 silly addNameRange     '0.8.0',
+29 silly addNameRange     '0.8.1',
+29 silly addNameRange     '0.8.2',
+29 silly addNameRange     '0.8.3',
+29 silly addNameRange     '0.8.4',
+29 silly addNameRange     '0.8.5',
+29 silly addNameRange     '0.8.6',
+29 silly addNameRange     '0.8.7',
+29 silly addNameRange     '0.9.0',
+29 silly addNameRange     '0.9.1',
+29 silly addNameRange     '0.9.1-1',
+29 silly addNameRange     '0.9.2',
+29 silly addNameRange     '0.9.3',
+29 silly addNameRange     '0.9.4',
+29 silly addNameRange     '0.9.5',
+29 silly addNameRange     '0.9.6',
+29 silly addNameRange     '0.9.7',
+29 silly addNameRange     '0.9.8',
+29 silly addNameRange     '0.9.9',
+29 silly addNameRange     '0.9.10',
+29 silly addNameRange     '0.9.11',
+29 silly addNameRange     '0.9.12',
+29 silly addNameRange     '0.9.13',
+29 silly addNameRange     '0.9.14',
+29 silly addNameRange     '0.9.15',
+29 silly addNameRange     '0.9.16',
+29 silly addNameRange     '1.0.0-pre',
+29 silly addNameRange     '1.0.0-pre2',
+29 silly addNameRange     '1.0.0-pre3',
+29 silly addNameRange     '1.0.0-pre4',
+29 silly addNameRange     '1.0.0-pre5',
+29 silly addNameRange     '0.9.17',
+29 silly addNameRange     '1.0.0',
+29 silly addNameRange     '1.0.1',
+29 silly addNameRange     '1.0.2',
+29 silly addNameRange     '1.0.3',
+29 silly addNameRange     '1.0.4',
+29 silly addNameRange     '1.0.5',
+29 silly addNameRange     '1.0.6',
+29 silly addNameRange     '1.1.0',
+29 silly addNameRange     '1.2.0',
+29 silly addNameRange     '1.2.1',
+29 silly addNameRange     '1.3.0',
+29 silly addNameRange     '1.3.1',
+29 silly addNameRange     '1.3.2' ] ]
+30 verbose addNamed [ 'socket.io', '0.8.7' ]
+31 verbose addNamed [ '0.8.7', '0.8.7' ]
+32 silly lockFile cb903926-socket-io-0-8-7 socket.io@0.8.7
+33 verbose lock socket.io@0.8.7 /home/gomosoft/.npm/cb903926-socket-io-0-8-7.lock
+34 silly lockFile cb903926-socket-io-0-8-7 socket.io@0.8.7
+35 silly lockFile cb903926-socket-io-0-8-7 socket.io@0.8.7
+36 silly lockFile aec93506-socket-io-0-8 socket.io@0.8
+37 silly lockFile aec93506-socket-io-0-8 socket.io@0.8
+38 silly resolved [ { name: 'socket.io',
+38 silly resolved     version: '0.8.7',
+38 silly resolved     description: 'Real-time apps made cross-browser & easy with a WebSocket-like API',
+38 silly resolved     homepage: 'http://socket.io',
+38 silly resolved     keywords: [ 'websocket', 'socket', 'realtime', 'socket.io', 'comet', 'ajax' ],
+38 silly resolved     author: { name: 'Guillermo Rauch', email: 'guillermo@learnboost.com' },
+38 silly resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+38 silly resolved     repository:
+38 silly resolved      { type: 'git',
+38 silly resolved        url: 'git://github.com/LearnBoost/socket.io.git' },
+38 silly resolved     dependencies:
+38 silly resolved      { 'socket.io-client': '0.8.7',
+38 silly resolved        policyfile: '0.0.4',
+38 silly resolved        redis: '0.6.7' },
+38 silly resolved     devDependencies:
+38 silly resolved      { expresso: '0.9.2',
+38 silly resolved        should: '0.0.4',
+38 silly resolved        assertvanish: '0.0.3-1',
+38 silly resolved        benchmark: '0.2.2',
+38 silly resolved        microtime: '0.1.3-1',
+38 silly resolved        colors: '0.5.1' },
+38 silly resolved     main: 'index',
+38 silly resolved     engines: { node: '>= 0.4.0' },
+38 silly resolved     _npmUser: { name: 'rauchg', email: 'rauchg@gmail.com' },
+38 silly resolved     _id: 'socket.io@0.8.7',
+38 silly resolved     _engineSupported: true,
+38 silly resolved     _npmVersion: '1.0.99',
+38 silly resolved     _nodeVersion: 'v0.4.11',
+38 silly resolved     _defaultsLoaded: true,
+38 silly resolved     dist:
+38 silly resolved      { shasum: '98419cb68859a6fc5ec8d49f50dcdbbe2ffd4466',
+38 silly resolved        tarball: 'http://registry.npmjs.org/socket.io/-/socket.io-0.8.7.tgz' },
+38 silly resolved     maintainers: [ [Object] ],
+38 silly resolved     directories: {},
+38 silly resolved     _shasum: '98419cb68859a6fc5ec8d49f50dcdbbe2ffd4466',
+38 silly resolved     _from: 'socket.io@0.8',
+38 silly resolved     _resolved: 'https://registry.npmjs.org/socket.io/-/socket.io-0.8.7.tgz',
+38 silly resolved     bugs: { url: 'https://github.com/LearnBoost/socket.io/issues' },
+38 silly resolved     readme: 'ERROR: No README data found!' } ]
+39 info install socket.io@0.8.7 into /usr/lib
+40 info installOne socket.io@0.8.7
+41 verbose lib/node_modules/socket.io unbuild
+42 verbose tar unpack /home/gomosoft/.npm/socket.io/0.8.7/package.tgz
+43 silly lockFile f74c53eb-r-usr-lib-node-modules-socket-io tar:///usr/lib/node_modules/socket.io
+44 verbose lock tar:///usr/lib/node_modules/socket.io /home/gomosoft/.npm/f74c53eb-r-usr-lib-node-modules-socket-io.lock
+45 silly lockFile fd71e2b6--npm-socket-io-0-8-7-package-tgz tar:///home/gomosoft/.npm/socket.io/0.8.7/package.tgz
+46 verbose lock tar:///home/gomosoft/.npm/socket.io/0.8.7/package.tgz /home/gomosoft/.npm/fd71e2b6--npm-socket-io-0-8-7-package-tgz.lock
+47 silly gunzTarPerm modes [ '775', '664' ]
+48 error Error: EACCES, mkdir '/usr/lib/node_modules/socket.io'
+48 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/socket.io']
+48 error   errno: 3,
+48 error   code: 'EACCES',
+48 error   path: '/usr/lib/node_modules/socket.io',
+48 error   fstream_type: 'Directory',
+48 error   fstream_path: '/usr/lib/node_modules/socket.io',
+48 error   fstream_class: 'DirWriter',
+48 error   fstream_stack:
+48 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+48 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+48 error      'Object.oncomplete (fs.js:107:15)' ] }
+49 error Please try running this command again as root/Administrator.
+50 error System Linux 3.13.0-36-generic
+51 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "socket.io@0.8"
+52 error cwd /home/gomosoft/app/frontend/magic
+53 error node -v v0.10.33
+54 error npm -v 1.4.28
+55 error path /usr/lib/node_modules/socket.io
+56 error fstream_path /usr/lib/node_modules/socket.io
+57 error fstream_type Directory
+58 error fstream_class DirWriter
+59 error code EACCES
+60 error errno 3
+61 error stack Error: EACCES, mkdir '/usr/lib/node_modules/socket.io'
+62 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+62 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+62 error fstream_stack Object.oncomplete (fs.js:107:15)
+63 verbose exit [ 3, true ]

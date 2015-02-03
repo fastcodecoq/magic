@@ -1,6 +1,9 @@
 
+
+
  var socket, 
      tu, 
+     n,
      sonidito = document.createElement('audio'), 
      control = 0,
      me = '',
@@ -9,6 +12,7 @@
      intControl = true,
      lang = undefined,
      env = $$.environment(),
+     txtFocus = ''
      isMobile = env.isMobile;
 
  sonidito.src = "sonidos/hoo.ogg";
@@ -17,18 +21,25 @@
 
 function arrancar(user){
 
+	
+console.log('user ', user);
+
+
+
  socket = io.connect('http://gomosoft.com:7873');
     
 	//sonidito.src = "nokia.mp3";
 
 var multimedia = [];
 var inbox = {};
-title = $("title").text();
-lang = user.locale;
+var title = $("title").text();
+var lang = user.locale;
+
 fileUp();
 iniTranslater();
 
 
+console.log(lang);
 
 /*
 
@@ -57,13 +68,14 @@ if (usuarionoesta){
 */
 
 n = user.name;
+console.log(n);
 
 tu = {
 	nombre: 'Anonimo',
-	iden: 'undefine'
+	iden: 'undefined'
 };
 
-var ifr = document.getElementById("transmision");
+//var ifr = document.getElementById("transmision");
    // ifr.src = "http://www.youtube.com/embed/LuLw9_JEAsw";
 
 
@@ -80,19 +92,40 @@ window.onfocus = function () {
 if (n == null || n == ""){
 	var aleatorio = Math.random() * 10000;
 	n = 'Anonimo' + aleatorio.toFixed();
-}
+}	
 
-		 var OS = (env.os) ? env.os.name + " (" + env.os.version + ")" + " " : "";
-		     OS += (isMobile) ? "Mobile" : "{{OS}} PC";
+		 var OS = (env.os) ? env.os.name + " (" + env.os.version + ")" + " " : "";	
+		     OS += (isMobile) ? "Mobile" : "{{OS}} PC";		 	    
 		 var userAgent = navigator.userAgent.toLowerCase();
-		 var pcOs = userAgent.match("linux") || userAgent.match("windows") || userAgent.match("android");
-		     pcOs = pcOs[0];
-   	         OS = (pcOs[0]) ? OS.replace("{{OS}}", pcOs) : OS;
+		 var pcOs = userAgent.match("linux") || userAgent.match("windows") || userAgent.match("android") || userAgent.match("mac");
 
+      try{
+	
+		     console.log(OS);		
+		     pcOs = pcOs[0];		     
+		 	 console.log(pcOs);		     
+   	         OS = (pcOs) ? OS.replace("{{OS}}", pcOs) : OS;
    	         console.log("os", env.os)
 
-   user.onMobile = isMobile;
-   user.OS = OS;
+
+		     console.log(OS,userAgent,pcOs,Os);
+
+
+		    user.onMobile = isMobile;
+		    user.OS = OS;
+
+   	     }catch(e){
+
+   	     	 console.log(e);
+
+   	     	 user.onMobile = false;
+    		 user.OS = OS;
+
+   	     }
+
+   	         
+
+    console.log(user, 'user two');
 
 	socket.emit('entro', user);
 
@@ -256,7 +289,8 @@ if (n == null || n == ""){
 
 			}
 
-		    var url = false;
+		             var url = false;
+		             var cUrl = '';
 
 		              if ( cUrl = user.texto.match('(((f|ht){1}tp://)[-a-zA-Z0-9@:%_+.~#?&//=]+)') ) {
 
@@ -834,6 +868,8 @@ function live_prettyprint(){
 
 function run ( reconnected ) {
 
+	alert('hey')
+
 	if(control > 0)
 		return;
 
@@ -1003,7 +1039,7 @@ multiselect: true
 
 
 	$('#mensaje').blur(function(){		
-		txtFocus = 'no';
+		var txtFocus = 'no';
         
         $(this).addClass("ita");
         
@@ -1049,7 +1085,7 @@ multiselect: true
 	});
 
 	if(reconnected)
-		FB.api("/me", function(user){ if(!user.error) arrancar(user); else location.reload(); })
+		FB.api("/me", function(user){ alert('here'); if(!user.error) arrancar(user); else location.reload(); })
 
 	control++;
 
@@ -1521,3 +1557,4 @@ function nl2br (str, is_xhtml) {
 
   return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
 }
+
