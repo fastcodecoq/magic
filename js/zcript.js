@@ -15,7 +15,7 @@
      txtFocus = ''
      isMobile = env.isMobile;
 
- sonidito.src = "sonidos/hoo.ogg";
+ sonidito.src = "sonidos/hoo.ogg"; 
 
  window = window.top;
 
